@@ -12,9 +12,9 @@
         <nav class="navbar">
             <div class="logo">CrowishFate</div>
             <ul class="tabs">
-                <li><button class="about">About</button></li>
+                <li><button class="about">About</button></li> <!--might remove atp idk why i added ts -->
                 <li><button class="hours">Hours</button></li>
-                <li><button class="board">whiteboard</button></li>
+                <li><button class="board">whiteboard</button></li> <!--Excalidraw API-->
                 <li><button class="links">Links</button></li>
                 <li><button class="profile">Profile</button></li>
             </ul>
@@ -22,11 +22,33 @@
         </nav>
     </div>
     <hr class="border">
-    <div class="options">
+    <div class="options"> <!--1st row containers-->
         <div class="todo">
-            <h3 class="task">
-                To-Do List
-            </h3>
+            <ul id="tdlist">
+                <!--List Items-->
+            </ul>
+            <button id="addtodo" class="addtodo"> Click To Add Task </button>
+            <div id="taskBox" class="taskBox"></div> <!--overlay -->
+            <!--Dialouge box for creating the new task-->
+            <div class="createTask" id="createTask">
+                <form action="createToDo" class="createToDo" id="createToDo">
+                    <label for="name">Task:</label><br>
+                    <input type="text" id="ipTask" name="ipTask"><br>
+                    <label for="priority">Select Task priority:</label><br>
+                    <select id="imp" name="imp"> <!--dropdown-->
+                        <option value="4">Highest Priority</option>
+                        <option value="3">High Priority</option>
+                        <option value="2">Low Priority</option>
+                        <option value="2">Lowest Priority</option>
+                    </select>
+                    <label for="dueDate">Due Date</label>
+                    <input type="date" id="endDate" class="endDate"><br>
+                    <button type="submit">Create To Do</button>
+                    <button type="button">Cancel</button>
+                </form>
+                <script src="JS/todo.js"></script>
+            </div>
+
         </div>
         <div class="timer">
             <p>add timer here</p>
@@ -38,12 +60,14 @@
             <p>classic white noise</p>
         </div>
     </div>
-    <div class="sec">
+    <div class="sec"> <!--Second row containers-->
         <div class="music">
             <p>music embed</p>
         </div>
         <div class="notes">
-            <p>notes section</p>
+            <h3 class="task">
+                Notes
+            </h3>
         </div>
     </div>
 </body>
