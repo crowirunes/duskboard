@@ -7,7 +7,7 @@
 body{
     font-family: 'Georgia';
     background-color: #9792cb;
-    
+    position: relative; /* Makes body the positioning context */
 }
 
 .container {
@@ -30,7 +30,7 @@ header {
     justify-content: space-between; 
     align-items: center;            
     padding: 10px 20px;
-     width: 100%;                     /* full width */
+     width: 100%;                     
     box-sizing: border-box; 
 }
 
@@ -72,4 +72,104 @@ button:hover {
   border-style: solid; /*inset for translucent*/
   border-width: 3px;
   color: #aa74a0;
+}
+
+.options {
+    display: flex;
+    /justify-content: center;
+    /**align-items: center;**/
+    height: 200px;
+    gap: 13px;
+    margin-right: 13px;
+    margin-left: 13px;
+    margin-top: 13px;
+}
+
+.todo {
+    justify-content: left;
+    width: 450px;
+    height: 500px;
+    border: 3px solid #852736;
+    /**background-style: inline-block ;**/
+    padding: 15px;
+    color: #e2c99e;
+    border-radius: 10px;
+    overflow-y: auto; /**scrollbar**/
+}
+
+@media (min-width: 768px) {
+    .todo {
+        height: 87vh; /* Full height on desktop */
+    }
+}
+
+.timer {
+    justify-content: left;
+    width: 700px;
+    height: 350px;
+    border: 3px solid #414b9e;
+    /**background-style: inline-block ;**/
+    padding: 15px;
+    color: #e2c99e;
+    border-radius: 10px ;
+}
+.cal {
+    justify-content: left;
+    width: 650px;
+    height: 350px;
+    border: 3px solid #e2c99e;
+    /**background-style: inline-block ;**/
+    padding: 15px;
+    color: #e2c99e;
+    border-radius: 10px ;
+}
+.noise {
+    
+    width: 350px;
+    height: 350px;
+    border: 3px solid #852736;
+    /**background-style: inline-block ;**/
+    padding: 15px;
+    color: #e2c99e;
+    border-radius: 10px;
+    overflow-y: auto; /**scrollbar**/
+}
+
+.sec { /**putting the section in the bottom right of the screen**/
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 13px;
+    margin-right: 13px;
+    display: flex;
+    gap: 13px;
+    z-index: 1000;
+}
+
+.music {
+    
+    width: 553px;
+    height: 358px;
+    border: 3px solid #e2c99e;
+    /**background-style: inline-block ;**/
+    padding: 15px;
+    color: #e2c99e;
+    border-radius: 10px;
+    overflow-y: auto; /**scrollbar**/
+}
+.notes {
+    
+    width: 500px;
+    height: 358px;
+    border: 3px solid #414b9e;
+    /**background-style: inline-block ;**/
+    padding: 15px;
+    color: #e2c99e;
+    border-radius: 10px;
+    overflow-y: auto; /**scrollbar**/
+}
+.task{
+    text-align: center;
+    font-weight: bold;
+    font-family: 'cursive';
 }
