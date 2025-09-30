@@ -44,15 +44,40 @@ createToDo.addEventListener('submit', (e) => {
     });
 });
 
+//dated task
+function hasDate(dueDate){
+    if(dueDate != null){
+        true;
+    }
+}
+//priority list
+function priorityOrder(priority, dueDate){
+    if (priority.getElementById('four') && hasDate) {
+        return 7;
+    }else if (priority.getElementById('four')) {
+        return 6;
+    }else if (priority.getElementById('three') && hasDate) {
+        return 5;
+    }else if (priority.getElementById('three')) {
+        return 4;
+    }else if (priority.getElementById('two') && hasDate) {
+        return 3;
+    }else if (priority.getElementById('two')) {
+        return 2;
+    }else if (priority.getElementById('one') && hasDate) {
+        return 1;
+    }else if (priority.getElementById('one')) {
+        return 0;
+    }
+}
 //Add to the list
-function addTask(taskName, priority, dueDate) {
+function addTask(taskName, dueDate) {
     const tList = document.createElement('li');
     tList.innerHTML = `
-        
-        <span>${taskName}</span>
-        <span>Priority: ${priority}</span>
-        <span>Due: ${dueDate}</span>
         <button class="delBtn"> X </button>
+        <span>${taskName}</span>
+        <hr/>
+        <sub>Due:   ${dueDate}</sub>
     `;
     
     //delete task
