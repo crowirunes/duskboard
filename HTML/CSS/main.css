@@ -1,31 +1,28 @@
+/*default browser settings*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
+/*Body*/
 body{
     font-family: 'Georgia';
     background-color: #a0ae91;
     position: relative; /* Makes body the positioning context */
 }
-
+/*navbar bg*/
 .container {
     flex: wrap;
-    /*margin: 0 10px;
-    padding: 0 10px; */
     overflow: hidden;
     background-color: #284139;
 }
 
 header {
-    
     color: #fff;
     padding: 5px 0;
 }
-
+/*navbar items*/
 .navbar{
-    /*flex: wrap;*/
     display: flex;
     justify-content: space-between; 
     align-items: center;            
@@ -33,7 +30,7 @@ header {
      width: 100%;                     
     box-sizing: border-box; 
 }
-
+/*logo*/
 .logo{
     font-size: 35px;
     font-family: 'Impact';
@@ -42,7 +39,7 @@ header {
     text-align: left;
 }
 
-
+/*navbar buttons*/
 .tabs li {
     float: right;
     display: inline-block;
@@ -63,7 +60,7 @@ header {
 button:hover {
     background-color: #67706a;
 }
-
+/*hr after navbar*/
 .border{
     border: none; 
     display: block;
@@ -73,11 +70,10 @@ button:hover {
   border-width: 3px;
   color: #809076;
 }
-
+/*first row containers*/
 .options {
     display: flex;
-    /justify-content: center;
-    /**align-items: center;**/
+    justify-content: center;
     height: 200px;
     gap: 13px;
     margin-right: 13px;
@@ -90,7 +86,6 @@ button:hover {
     width: 450px;
     height: 500px;
     border: 3px solid #354024;
-    /**background-style: inline-block ;**/
     padding: 15px;
     color: #e2c99e;
     border-radius: 10px;
@@ -108,34 +103,32 @@ button:hover {
     width: 700px;
     height: 350px;
     border: 3px solid #414b9e;
-    /**background-style: inline-block ;**/
     padding: 15px;
     color: #e2c99e;
     border-radius: 10px ;
 }
+/*Calendar*/
 .cal {
     justify-content: left;
     width: 650px;
     height: 350px;
     border: 3px solid #354024;
-    /**background-style: inline-block ;**/
     padding: 15px;
     color: #e2c99e;
     border-radius: 10px ;
 }
+/*white noise*/
 .noise {
-    
     width: 350px;
     height: 350px;
     border: 3px solid #852736;
-    /**background-style: inline-block ;**/
     padding: 15px;
     color: #e2c99e;
     border-radius: 10px;
     overflow-y: auto; /**scrollbar**/
 }
-
-.sec { /**putting the section in the bottom right of the screen**/
+/*putting the section in the bottom right of the screen*/
+.sec { 
     position: fixed;
     bottom: 0;
     right: 0;
@@ -147,28 +140,25 @@ button:hover {
 }
 
 .music {
-    
     width: 553px;
     height: 358px;
     border: 3px solid #354024;
-    /**background-style: inline-block ;**/
     padding: 15px;
     color: #e2c99e;
     border-radius: 10px;
-    overflow-y: auto; /**scrollbar**/
+    overflow-y: auto;
 }
+
 .notes {
-    
     width: 500px;
     height: 358px;
     border: 3px solid #414b9e;
-    /**background-style: inline-block ;**/
     padding: 15px;
     color: #e2c99e;
     border-radius: 10px;
-    overflow-y: auto; /**scrollbar**/
+    overflow-y: auto;
 }
-
+/*add a to do button*/
 .addtodo{
     text-align: center;
     font-weight: bold;
@@ -187,8 +177,6 @@ button:hover {
     transition: background-color 0.3s;
     
 }
-
-
 /* Hide the form and overlay by default */
 .createTask {
     display: none;
@@ -202,7 +190,7 @@ button:hover {
     z-index: 1001;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
-
+/*overlay*/
 .taskBox {
     display: none;
     position: fixed;
@@ -213,7 +201,6 @@ button:hover {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1000;
 }
-
 /* class to display to do form */
 .createTask.show {
     display: block;
@@ -230,10 +217,9 @@ button:hover {
     gap: 10px;
 }
 
-.createToDo input,
-.createToDo select {
+.createToDo input,.createToDo select {
     padding: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid #b9cbbb;
     border-radius: 5px;
 }
 
@@ -247,15 +233,32 @@ button:hover {
 
 .createToDo button[type="submit"] {
     background-color: #852736;
-    color: white;
+    color: #ffffff;
 }
 
 .createToDo button[type="button"] {
-    background-color: #ccc;
-    color: black;
+    background-color: #852736;
+    color: #ffffff;
 }
 
-.tList{
+/*Dropdown for priority list*/
+.four{
+    background-color: #2b4336;
+}
+
+.three{
+    background-color: #324d3e;
+}
+
+.two{
+    background-color: #728a6e;
+}
+
+.one{
+    background-color: #8ea48b;
+}
+
+.tdlist{
     list-style-type: none; /* Remove bullets */
     margin-top: 2px;
     margin-bottom: 2px;

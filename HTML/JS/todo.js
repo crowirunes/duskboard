@@ -3,6 +3,7 @@ const addtodo = document.getElementById('addtodo'); //button that opens dbox to 
 const createTask = document.getElementById('createTask'); //dbox -> form for new task
 const taskBox = document.getElementById('taskBox'); //overlay to hide the dbox until called
 const createToDo = document.getElementById('createToDo'); // the form
+const select = document.getElementById('imp')
 //Show taskbox when clicked
 addtodo.addEventListener('click', () => {
     createTask.classList.add("show");
@@ -36,6 +37,11 @@ createToDo.addEventListener('submit', (e) => {
         createTask.classList.remove("show");
         taskBox.classList.remove("show");
     }
+
+    select.addEventListener("change", function() {
+        const option = select.options[select.selectedIndex];
+        select.style.backgroundColor = option.style.backgroundColor;
+    });
 });
 
 //Add to the list
@@ -46,11 +52,11 @@ function addTask(taskName, priority, dueDate) {
         <span>${taskName}</span>
         <span>Priority: ${priority}</span>
         <span>Due: ${dueDate}</span>
-        <button class="delBtn">Delete</button>
+        <button class="delBtn"> X </button>
     `;
     
-    // Add delete functionality
-    const deleteBtn = tList.querySelector('.delBtn');
+    //delete task
+    const deleteBtn = tList.querySelector('.delBtn'); //delete button
     deleteBtn.addEventListener('click', () => {
         tList.remove();
     });
