@@ -3,7 +3,8 @@ const addtodo = document.getElementById('addtodo'); //button that opens dbox to 
 const createTask = document.getElementById('createTask'); //dbox -> form for new task
 const taskBox = document.getElementById('taskBox'); //overlay to hide the dbox until called
 const createToDo = document.getElementById('createToDo'); // the form
-const select = document.getElementById('imp')
+const select = document.getElementById('imp') //priority select
+const ogDate = document.getElementById('endDate'); //due date input
 //Show taskbox when clicked
 addtodo.addEventListener('click', () => {
     createTask.classList.add("show");
@@ -46,45 +47,74 @@ createToDo.addEventListener('submit', (e) => {
 
 //dated task
 function hasDate(dueDate){
-    if(dueDate != null){
-        true;
+    return dueDate !== null && dueDate !== "";
+}
+
+//format date
+function formatDate(dateString) {
+    if(!hasDate(dateString)){
+        return "";
+    }else{
+        const [year, month, day] = dateString.split("-");
+        return `${day}/${month}/${year}`;
     }
 }
 //priority list
 function priorityOrder(priority, dueDate){
-    if (priority.getElementById('four') && hasDate) {
+    if (priority==="four" && hasDate(dueDate)){
         return 7;
-    }else if (priority.getElementById('four')) {
+    }else if (priority==="four"){
         return 6;
-    }else if (priority.getElementById('three') && hasDate) {
+    }else if (priority==="three" && hasDate(dueDate)){
         return 5;
-    }else if (priority.getElementById('three')) {
+    }else if (priority==="three" ){
         return 4;
-    }else if (priority.getElementById('two') && hasDate) {
+    }else if (priority==="two" && hasDate(dueDate)) {
         return 3;
-    }else if (priority.getElementById('two')) {
+    }else if (priority==="two" ){
         return 2;
-    }else if (priority.getElementById('one') && hasDate) {
+    }else if (priority==="one" && hasDate(dueDate)){
         return 1;
-    }else if (priority.getElementById('one')) {
+    }else if (priority==="one" ){
         return 0;
+    }else{
+        return -1;
     }
 }
 //Add to the list
-function addTask(taskName, dueDate) {
-    const tList = document.createElement('li');
-    tList.innerHTML = `
-        <button class="delBtn"> X </button>
-        <span>${taskName}</span>
-        <hr/>
-        <sub>Due:   ${dueDate}</sub>
-    `;
-    
+function addTask(taskName, priority, dueDate) {
+    const newToDo = document.createElement('li');
+    const order = priorityOrder(priority, dueDate);
+    newToDo.dataset.order = order; //order set on li
+    if(hasDate(dueDate)){
+        newToDo.innerHTML = `
+            <div class="row></div>
+            <button class="delBtn"> X </button>
+            <span>${taskName}</span>
+            <hr/>
+            <sub>Due:   ${formatDate(dueDate)}</sub>
+        `;
+    }else{
+        newToDo.innerHTML = `
+            <button class="delBtn"> X </button>
+            <span>${taskName}</span>
+        `;
+    }
     //delete task
-    const deleteBtn = tList.querySelector('.delBtn'); //delete button
+    const deleteBtn = newToDo.querySelector('.delBtn'); //delete button
     deleteBtn.addEventListener('click', () => {
-        tList.remove();
+        newToDo.remove();
     });
-    
-    tdlist.appendChild(tList);
+    //insert in order
+    let inserted = false;
+  for (let child of tdlist.children) {
+    if (parseInt(child.dataset.order) < order) {
+      tdlist.insertBefore(newToDo, child);
+      inserted = true;
+      break;
+    }
+  }
+  if (!inserted) {
+    tdlist.appendChild(newToDo);
+  }
 }

@@ -4,3 +4,51 @@
     box-sizing: border-box;
 }
 
+.row{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+ul#tdlist {
+  list-style: none;
+  padding: 0;
+}
+
+ul#tdlist li {
+  background: #73986f;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.delBtn {
+  align-self: flex-end;
+  background: #a74357;
+  color: #ffffff;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.createTask {
+  display: none; /* hidden until opened */
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  margin-top: 20px;
+}
+
+button.addtodo {
+  margin-top: 20px;
+  padding: 10px 15px;
+  background: #2b4336;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
